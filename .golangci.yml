@@ -20,6 +20,11 @@ linters:
     - modernize
 
   settings:
+    modernize:
+      # The project targets Go 1.24 (see go.mod). The waitgroup analyzer
+      # suggests sync.WaitGroup.Go which is only available in Go 1.25+.
+      disable:
+        - waitgroup
     govet:
       enable-all: true
       disable:
